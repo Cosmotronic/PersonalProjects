@@ -26,23 +26,19 @@ def main():
 		        text_result += i
 		    elif i in test_map_upper or test_map_lower: # if it's an alphabetical character, substitute
 		        if i in test_map_upper:
-		            char = ord(i) - upper_offset
-		            new_char(char,mod_selector)
-		            result = new_char + upper_offset
+		            result = new_char((ord(i) - upper_offset),mod_selector) + upper_offset
 		            text_result += chr(result)
 		        elif i in test_map_lower:
-		            char = ord(i) - lower_offset
-		            new_char(char,mod_selector)
-		            result = new_char + lower_offset
+		            result = new_char((ord(i) - lower_offset),mod_selector) + lower_offset
 		            text_result += chr(result)
-		    else: #if it's not al alphabetical character, just append to output
+		    else: #if it's not an alphabetical character, just append to output
 		        text_result += i
 
 		return text_result
 
-	output = substitution(cypher_string)
+	# output = substitution(cypher_string)
 
-	print(output)
+	print(substitution(cypher_string))
 
 	opt_continue = input("Continue? [Y/N]")
 	if opt_continue.lower() == "y" or "n":
@@ -60,3 +56,8 @@ while running:
 # rot 13 encrypted message from The Secret World mmo; inspired this project.  
 # using it as a sample to test the logic.
 # CNGU BS GURFHA - ERYNGRF ABGWHFG GB GURFBYNE OBQL, OGH GUR GENIRY BS GUR UHZNA OBQL - OVEGU GB ORLBAQ
+#
+# unknown substitution cypher for PythonChallenge 
+# g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp.
+# bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle.
+# sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.
